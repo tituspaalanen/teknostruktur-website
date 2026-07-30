@@ -14,7 +14,8 @@ const icons = {
 };
 ---
 
-<section class="flex flex-col items-center py-6 w-full">
+<!-- TÄSSÄ MUUTOS 1: Lisätty px-5, joka estää elementtejä osumasta ruudun reunoihin -->
+<section class="flex flex-col items-center py-6 px-5 w-full">
 
   <!-- Profiilikuva -->
   <div class="mb-6">
@@ -27,8 +28,8 @@ const icons = {
     </div>
   </div>
 
-  <!-- Artistinimi -->
-  <h1 class="text-5xl sm:text-6xl font-black tracking-tight text-white uppercase text-center drop-shadow-md">
+  <!-- TÄSSÄ MUUTOS 2: Otsikon koko muutettu mobiilissa "text-5xl" -> "text-4xl" -->
+  <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-white uppercase text-center drop-shadow-md">
     TEKNOSTRUKTUR
   </h1>
 
@@ -141,7 +142,7 @@ const icons = {
           method="POST"
           class="space-y-3.5"
         >
-          <!-- Web3Forms API-avain (Vaihda tämä omaasi osoitteesta web3forms.com) -->
+          <!-- Web3Forms API-avain -->
           <input type="hidden" name="access_key" value="22fa1c25-9255-448a-ae48-7089cbd4a3a9" />
           <input type="hidden" name="subject" value="Uusi yhteydenotto TEKNOSTRUKTUR-sivustolta!" />
 
