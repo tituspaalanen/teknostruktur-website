@@ -1,0 +1,126 @@
+---
+// src/components/Hero.astro
+
+const icons = {
+  spotify: `<svg width="20" height="20" class="shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.48-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141 C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.281 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.18-1.2-.18-1.38-.72-.18-.6.18-1.2.72-1.38 4.26-1.26 11.28-1.02 15.72 1.62.54.3.72 1.02.42 1.56-.3.42-1.02.6-1.56.3z"/></svg>`,
+  soundcloud: `<svg width="20" height="20" class="shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M1.175 12.225c-.05 0-.088.038-.088.088v5.525c0 .05.038.088.088.088h.7c.05 0 .088-.038.088-.088v-5.525c0-.05-.038-.088-.088-.088zm2.087-1.425c-.05 0-.087.038-.087.088v6.95c0 .05.038.088.088.088h.7c.05 0 .088-.038.088-.088v-6.95c0-.05-.038-.088-.088-.088zm2.088-1.225c-.05 0-.088.038-.088.088v8.175c0 .05.038.088.088.088h.7c.05 0 .088-.038.088-.088V9.662c0-.05-.038-.087-.088-.087zm2.088-2.125c-.05 0-.088.038-.088.088v10.3c0 .05.038.088.088.088h.7c.05 0 .088-.038.088-.088v-10.3c0-.05-.038-.088-.088-.088zm2.087-.75c-.05 0-.087.038-.087.088v11.05c0 .05.038.088.088.088h.7c.05 0 .088-.038.088-.088V6.788c0-.05-.038-.088-.088-.088zm13.125 3.325c-.525 0-1.025.125-1.475.35-.35-2.625-2.6-4.65-5.325-4.65-1.125 0-2.175.35-3.025 1.025-.05.038-.075.088-.075.138v10.375c0 .05.038.088.088.088h9.812c1.925 0 3.5-1.575 3.5-3.5 0-1.925-1.575-3.826-3.5-3.826z"/></svg>`,
+  linkedin: `<svg width="20" height="20" class="shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>`,
+  rightArrow: `<svg width="18" height="18" class="shrink-0 transition-transform duration-300 group-hover:translate-x-1.5 text-zinc-400 group-hover:text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>`
+};
+---
+
+<section class="flex flex-col items-center py-4 w-full">
+
+  <!-- Profiilikuva -->
+  <div class="mb-6">
+    <div class="w-32 h-32 sm:w-36 sm:h-36 rounded-2xl p-1 bg-black/40 border border-amber-400/40 backdrop-blur-md shadow-2xl">
+      <img
+        src="/profile.jpg"
+        alt="Titus Paalanen"
+        class="w-full h-full object-cover rounded-xl"
+      />
+    </div>
+  </div>
+
+  <!-- Otsikkolohko: Harmoninen ja yhtenäinen typografia -->
+  <div class="flex flex-col items-center justify-center w-full space-y-1">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-white uppercase text-center drop-shadow-md">
+      TEKNOSTRUKTUR
+    </h1>
+    
+    <p class="text-lg sm:text-xl md:text-2xl font-bold tracking-[0.2em] text-amber-400 uppercase text-center drop-shadow">
+      TITUS PAALANEN
+    </p>
+  </div>
+
+  <!-- Bio -->
+  <p class="w-full max-w-xl text-zinc-200 text-xs sm:text-sm md:text-base text-center mt-4 leading-relaxed font-normal drop-shadow sm:whitespace-nowrap">
+    House Music Artist <span class="text-amber-400/80 mx-1">|</span> Fourth-Year Student at Åbo Akademi
+  </p>
+
+  <!-- Linkkiryhmä -->
+  <div class="w-full max-w-xl mt-10 space-y-3.5">
+    
+    <!-- 1. Spotify Link -->
+    <a
+      href="https://open.spotify.com/artist/2wthdlVhsJsxF6l3SEIMyj"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="group flex items-center justify-between w-full p-4 sm:p-5 rounded-2xl border border-white/15 bg-black/55 backdrop-blur-md hover:bg-black/75 hover:border-amber-400/60 transition-all duration-300 shadow-xl"
+    >
+      <div class="flex items-center space-x-4">
+        <div class="p-3 rounded-xl bg-white/10 text-zinc-200 group-hover:bg-amber-400 group-hover:text-black transition-colors duration-300 shrink-0">
+          <Fragment set:html={icons.spotify} />
+        </div>
+        <div class="flex flex-col text-left">
+          <span class="text-[10px] sm:text-xs font-['JetBrains_Mono',monospace] text-pink-300/90 uppercase tracking-widest leading-none mb-1.5 font-semibold">MUSIC</span>
+          <span class="font-bold text-base sm:text-lg text-white leading-none tracking-tight">Spotify</span>
+        </div>
+      </div>
+      <Fragment set:html={icons.rightArrow} />
+    </a>
+
+    <!-- 2. SoundCloud Link -->
+    <a
+      href="https://soundcloud.com/teknostruktur"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="group flex items-center justify-between w-full p-4 sm:p-5 rounded-2xl border border-white/15 bg-black/55 backdrop-blur-md hover:bg-black/75 hover:border-amber-400/60 transition-all duration-300 shadow-xl"
+    >
+      <div class="flex items-center space-x-4">
+        <div class="p-3 rounded-xl bg-white/10 text-zinc-200 group-hover:bg-amber-400 group-hover:text-black transition-colors duration-300 shrink-0">
+          <Fragment set:html={icons.soundcloud} />
+        </div>
+        <div class="flex flex-col text-left">
+          <span class="text-[10px] sm:text-xs font-['JetBrains_Mono',monospace] text-pink-300/90 uppercase tracking-widest leading-none mb-1.5 font-semibold">SETS & MORE MUSIC</span>
+          <span class="font-bold text-base sm:text-lg text-white leading-none tracking-tight">SoundCloud</span>
+        </div>
+      </div>
+      <Fragment set:html={icons.rightArrow} />
+    </a>
+
+    <!-- 3. LinkedIn Link -->
+    <a
+      href="https://linkedin.com/in/tituspaalanen111/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="group flex items-center justify-between w-full p-4 sm:p-5 rounded-2xl border border-white/15 bg-black/55 backdrop-blur-md hover:bg-black/75 hover:border-amber-400/60 transition-all duration-300 shadow-xl"
+    >
+      <div class="flex items-center space-x-4">
+        <div class="p-3 rounded-xl bg-white/10 text-zinc-200 group-hover:bg-amber-400 group-hover:text-black transition-colors duration-300 shrink-0">
+          <Fragment set:html={icons.linkedin} />
+        </div>
+        <div class="flex flex-col text-left">
+          <span class="text-[9px] font-['JetBrains_Mono',monospace] text-pink-300/90 uppercase tracking-widest leading-none mb-1.5 font-semibold">CV & JOB STUFF</span>
+          <span class="font-bold text-base sm:text-lg text-white leading-none tracking-tight">LinkedIn</span>
+        </div>
+      </div>
+      <Fragment set:html={icons.rightArrow} />
+    </a>
+
+    <!-- 4. Musiikkisoitin -->
+    <div class="w-full pt-2">
+      <div class="flex items-center gap-3 w-full px-1 mb-3">
+        <h2 class="font-['JetBrains_Mono',monospace] text-xs text-amber-400 uppercase tracking-widest flex items-center gap-2 shrink-0 font-semibold">
+          <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+          NEWEST SPOTIFY RELEASE
+        </h2>
+        <div class="h-[1px] flex-1 bg-white/20"></div>
+      </div>
+
+      <div class="p-1.5 rounded-2xl border border-white/15 bg-black/55 backdrop-blur-md shadow-2xl">
+        <iframe
+          style="border-radius:12px"
+          src="https://open.spotify.com/embed/track/75f1FTv0jEihtvh1EwVkSG?si=8af87ea12b5f46f7"
+          width="100%"
+          height="152"
+          frameborder="0"
+          allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+
+  </div>
+</section>

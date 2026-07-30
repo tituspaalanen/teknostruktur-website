@@ -1,0 +1,33 @@
+---
+// src/components/Music.astro
+---
+
+<section data-category="audio" class="filterable-item flex flex-col mt-10 space-y-4 w-full">
+  <!-- Section Title -->
+  <div class="flex items-center gap-4 w-full">
+    <h2 class="font-mono text-xs text-emerald-400 uppercase tracking-widest flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+      01 // NEWEST SPOTIFY RELEASE
+    </h2>
+    <div class="h-[1px] flex-1 bg-gradient-to-r from-zinc-800 to-transparent"></div>
+  </div>
+
+  <!-- Player Card -->
+  <div class="w-full p-2.5 rounded-2xl bg-zinc-900/40 border border-white/10 backdrop-blur-xl shadow-2xl relative overflow-hidden">
+    <div class="absolute -top-12 -right-12 w-32 h-32 bg-emerald-500/10 blur-2xl rounded-full pointer-events-none"></div>
+    
+    <div class="relative z-10">
+      <!-- VAIHDA TÄHÄN OMAN BIISISI ID -->
+      <iframe
+        style="border-radius:12px"
+        src="https://open.spotify.com/embed/track/75f1FTv0jEihtvh1EwVkSG?si=a655d69ab5af4423"
+        width="100%"
+        height="152"
+        frameborder="0"
+        allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+</section>
